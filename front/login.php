@@ -33,7 +33,11 @@ function login(table){
         if(parseInt(chk)==0){
             alert("驗證碼錯誤，請重新輸入")
         }else{
-            $.post("./api/chk_pw.php",{table,acc:$("#acc").val(),pw:$("#pw").val()},(res)=>{
+            $.post("./api/chk_pw.php",
+                    {table,
+                     acc:$("#acc").val(),
+                     pw:$("#pw").val()},
+                    (res)=>{
                 if(parseInt(res)==0){
                     alert("帳號或密碼錯誤，請重新輸入")
                 }else{
