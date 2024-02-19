@@ -8,6 +8,8 @@ $_POST['acc']=$_SESSION['mem'];
 
 $Order->save($_POST);
 
+unset($_SESSION['cart']);
+
 ?>
 
 <script>
