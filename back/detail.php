@@ -3,7 +3,6 @@ $row=$Order->find($_GET['id']);
 ?>
 <h2 class="ct">訂單編號<span style='color:red'><?=$row['no'];?></span>的詳細資料</h2>
 <!-- table.all>tr*6>td.tt.ct+td.pp>input:text -->
-<form action="./api/order.php" method="post">
 <table class="all">
     <tr>
         <td class="tt ct">登入帳號</td>
@@ -13,19 +12,19 @@ $row=$Order->find($_GET['id']);
     </tr>
     <tr>
         <td class="tt ct">姓名</td>
-        <td class="pp"><input type="text" style="border:0;background:#EFCA85" name="name" value="<?=$row['name'];?>"></td>
+        <td class="pp"><?=$row['name'];?></td>
     </tr>
     <tr>
         <td class="tt ct">聯絡電話</td>
-        <td class="pp"><input type="text" style="border:0;background:#EFCA85"  name="tel" value="<?=$row['tel'];?>"></td>
+        <td class="pp"><?=$row['tel'];?></td>
     </tr>
     <tr>
         <td class="tt ct">聯絡住址</td>
-        <td class="pp"><input type="text" style="border:0;background:#EFCA85"  name="addr" value="<?=$row['addr'];?>"></td>
+        <td class="pp"><?=$row['addr'];?></td>
     </tr>
     <tr>
         <td class="tt ct">電子信箱</td>
-        <td class="pp"><input type="text" style="border:0;background:#EFCA85"  name="email" value="<?=$row['email'];?>"></td>
+        <td class="pp"><?=$row['email'];?></td>
     </tr>
 </table>
 <table class="all">
@@ -54,6 +53,5 @@ foreach($cart as $id => $qt){
 </table>
 <div class="all ct tt">總價:<?=$row['total'];?>元</div>
 <div class="ct">
-    <input type="button" value="返回" onclick="location.href='?do=order'">
+    <button onclick="location.href='?do=order'">返回</button>
 </div>
-</form>
